@@ -1,0 +1,29 @@
+name: iOS Build with Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_ios:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          cd ios
+          pod install
+        shell: bash
+
+      - name: Build iOS App
+        run: |
+          xcodebuild -workspace ios/YourApp.xcworkspace \
+            -scheme YourApp \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath ios/build/YourApp.xcarchive \
+            archive
+        shell: bash
