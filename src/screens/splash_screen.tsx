@@ -1,15 +1,16 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import LottieView from 'lottie-react-native';
 import {getSecureItem, setSecureItem} from '../utils';
 import {getInsights, getMenstruationDays, getProfile, login} from '../api';
 import {setToken} from '../store/auth_slice.ts';
 import {splashAnimation} from '../assets/anims';
+import {AppNavigatorParamList} from "../navigation/types.ts";
 
 const SplashScreen = () => {
-  const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProp<AppNavigatorParamList>>();
   const dispatch = useDispatch();
   const animationRef = useRef<LottieView>(null);
   const [animationCount, setAnimationCount] = useState(0);
@@ -52,6 +53,7 @@ const SplashScreen = () => {
   useEffect(() => {
     if (animationCount >= 3 && apiFinished) {
         console.log('Navigating to Home');
+        navigation.navigate('Main', { screen: 'Cycle' });
     }
   }, [animationCount, apiFinished, navigation]);
 
