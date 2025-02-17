@@ -1,16 +1,17 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {SplashScreen} from '../screens';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {CycleScreen, CalendarScreen, AnalysisScreen, GuideScreen} from '../screens';
 
-const Stack = createStackNavigator();
+
+const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => {
     return (
-        <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="Splash" component={SplashScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Tab.Navigator>
+            <Tab.Screen name="Cycle" component={CycleScreen} />
+            <Tab.Screen name="Calendar" component={CalendarScreen} />
+            <Tab.Screen name="Analysis" component={AnalysisScreen} />
+            <Tab.Screen name="Guide" component={GuideScreen} />
+        </Tab.Navigator>
     );
 };
 
