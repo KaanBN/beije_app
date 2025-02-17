@@ -14,7 +14,6 @@ const SplashScreen = () => {
   const animationRef = useRef<LottieView>(null);
   const [animationCount, setAnimationCount] = useState(0);
   const [apiFinished, setApiFinished] = useState(false);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const initializeApp = async () => {
