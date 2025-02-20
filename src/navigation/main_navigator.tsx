@@ -2,7 +2,6 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {CycleScreen, CalendarScreen, AnalysisScreen, GuideScreen} from '../screens';
 import {Text} from 'react-native';
-import {BottomTabBar} from '../widgets';
 import CalendarIcon from "../assets/react_icons/calendar.tsx";
 import CycleIcon from "../assets/react_icons/cycle.tsx";
 import AnalysisIcon from "../assets/react_icons/analysis.tsx";

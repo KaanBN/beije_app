@@ -7,7 +7,7 @@ import {getSecureItem, setSecureItem} from '../utils';
 import {getInsights, getMenstruationDays, getProfile, login} from '../api';
 import {setToken} from '../store/auth_slice.ts';
 import {splashAnimation} from '../assets/anims';
-import {AppNavigatorParamList} from "../navigation/types.ts";
+import {AppNavigatorParamList} from '../navigation/types.ts';
 
 const SplashScreen = () => {
     const navigation = useNavigation<NavigationProp<AppNavigatorParamList>>();
