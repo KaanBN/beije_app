@@ -1,41 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import BottomSheetCard from "./bottom_sheet_card.tsx";
-import Svg, { Image } from 'react-native-svg';
-import Egg from "../assets/react_icons/egg.tsx";
+import BottomSheetCard from './bottom_sheet_card.tsx';
+import {EggIcon} from '../assets/react_icons';
 
 const InsightsList = () => {
     const insights = [
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d3',
-            'title': 'Adet dönemi başlangıcı',
-            'content': 'Adet dönemi, bir kadının vücudunun doğal bir döngüsüdür. İlk adet kanaması genellikle 12-14 yaşlarında başlar.',
-        },
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d4',
-            'title': 'Adet sancıları nasıl geçer?',
-            'content': 'Sıcak su torbası ve hafif egzersiz adet sancılarını hafifletebilir. Ayrıca, bitki çayları da rahatlatıcı etki yapabilir.',
-        },
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d3',
-            'title': 'Adet dönemi başlangıcı',
-            'content': 'Adet dönemi, bir kadının vücudunun doğal bir döngüsüdür. İlk adet kanaması genellikle 12-14 yaşlarında başlar.',
-        },
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d4',
-            'title': 'Adet sancıları nasıl geçer?',
-            'content': 'Sıcak su torbası ve hafif egzersiz adet sancılarını hafifletebilir. Ayrıca, bitki çayları da rahatlatıcı etki yapabilir.',
-        },
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d3',
-            'title': 'Adet dönemi başlangıcı',
-            'content': 'Adet dönemi, bir kadının vücudunun doğal bir döngüsüdür. İlk adet kanaması genellikle 12-14 yaşlarında başlar.',
-        },
-        {
-            '_id': '60a1b2c3d4e5f6789ab1c2d4',
-            'title': 'Adet sancıları nasıl geçer?',
-            'content': 'Sıcak su torbası ve hafif egzersiz adet sancılarını hafifletebilir. Ayrıca, bitki çayları da rahatlatıcı etki yapabilir.',
-        },
         {
             '_id': '60a1b2c3d4e5f6789ab1c2d3',
             'title': 'Adet dönemi başlangıcı',
@@ -52,7 +21,7 @@ const InsightsList = () => {
         <BottomSheetCard style={styles.container}>
             {insights.map((insight) => (
                 <View key={insight._id} style={styles.insightCard}>
-                    <Egg style={styles.iconContainer} />
+                    <EggIcon style={styles.iconContainer} />
                     <View style={styles.textContainer}>
                         <Text style={styles.title}>{insight.title}</Text>
                         <Text style={styles.content}>{insight.content}</Text>
